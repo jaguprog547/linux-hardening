@@ -1,4 +1,4 @@
-# Linux System Hardening Project 🔐
+# Linux System Hardening Project 🔐.
 ## Objective
 This project demonstrates how to secure a Linux (Ubuntu) system by applying fundamental cybersecurity practices.
 ## System Update
