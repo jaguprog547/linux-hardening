@@ -22,3 +22,25 @@ cat /etc/passwd
 - Importance of keeping systems updated
 - Managing user access securely
 - Applying least privilege principle
+
+  ##. Dynamic Security with Fail2ban (IPS)
+Installed and configured **Fail2ban** to act as a Host-based Intrusion Prevention System (HIPS), automatically banning suspicious IPs at the firewall level.
+
+## 🛠️ Case Study: Resilience & Troubleshooting (Maintaining Availability)
+During the security tools installation phase, the system experienced a critical storage failure that interrupted the package manager. Below is the disaster recovery process implemented:
+
+### **The Challenge**
+- **Error:** `E: Write error - write (28: No space left on device)`
+- **Impact:** Broken dependencies (`Unmet dependencies`) and a locked `dpkg` manager. This compromised the **Availability** of the system to implement further security measures.
+
+### The Solution (Disaster Recovery Workflow)**
+To restore the operating system's integrity, the following technical steps were taken:
+
+1. **Storage Cleanup:**
+   ```bash
+   sudo apt clean
+2. Repairing the Locked Package Manager:
+   sudo dpkg --configure -a
+3.  Resolving Broken Dependencies & Finalizing Installation:
+   sudo apt --fix-broken install -y
+   sudo apt install fail2ban -y
